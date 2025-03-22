@@ -16,12 +16,12 @@
 ## For further details, consult:
 ## https://mozilla-l10n.github.io/styleguides/mozilla_general/#brands-copyright-and-trademark
 
--brand-shorter-name = Marble
--brand-short-name = Marble
--brand-shortcut-name = Marble
--brand-full-name = Marble
+-brand-shorter-name = Okaeri
+-brand-short-name = Okaeri
+-brand-shortcut-name = Okaeri
+-brand-full-name = Okaeri
 # This brand name can be used in messages where the product name needs to
 # remain unchanged across different versions (Nightly, Beta, etc.).
--brand-product-name = Marble
--vendor-short-name = Network Neighborhood
+-brand-product-name = Firefox
+-vendor-short-name = Mozilla
 trademarkInfo = { " " }

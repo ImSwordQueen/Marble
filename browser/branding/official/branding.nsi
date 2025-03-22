@@ -2,15 +2,17 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-# NSIS branding defines for official release builds.
+# NSIS branding defines for unofficial builds.
+# The official release build branding.nsi is located in other-license/branding/firefox/
+# The nightly build branding.nsi is located in browser/installer/windows/nsis/
 
 # BrandFullNameInternal is used for some registry and file system values
 # instead of BrandFullName and typically should not be modified.
-!define BrandFullNameInternal "Marble"
-!define BrandFullName         "Marble"
-!define CompanyName           "Network Neighborhood"
-!define URLInfoAbout          "https://github.com/NetworkNeighborhood/Marble/"
-!define HelpLink              "https://github.com/NetworkNeighborhood/Marble/"
+!define BrandFullNameInternal "Okaeri"
+!define BrandFullName         "Okaeri"
+!define CompanyName           "Midotzer"
+!define URLInfoAbout          "https://github.com/Midotzer/Okaeri/"
+!define HelpLink              "https://github.com/Midotzer/Okaeri/"
 
 !define URLStubDownloadX86 "https://download.mozilla.org/?os=win&lang=${AB_CD}&product=firefox-latest"
 !define URLStubDownloadAMD64 "https://download.mozilla.org/?os=win64&lang=${AB_CD}&product=firefox-latest"

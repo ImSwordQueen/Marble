@@ -34,27 +34,6 @@ export const BuiltInThemeConfig = new Map([
     },
   ],
   [
-    "firefox-alpenglow@mozilla.org",
-    {
-      version: "1.4",
-      path: "resource://builtin-themes/alpenglow/",
-    },
-  ],
-  [
-    "marble-doukyuusei@mozilla.org",
-    {
-      version: "1.0",
-      path: "resource://builtin-themes/doukyuusei/",
-    },
-  ],
-  [
-    "marble-canica@mozilla.org",
-    {
-      version: "1.0",
-      path: "resource://builtin-themes/canica/",
-    },
-  ],
-  [
     "2022red-colorway@mozilla.org",
     {
       version: "1.1",

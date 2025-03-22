@@ -1556,12 +1556,6 @@
   value: true
   mirror: always
 
-# Enables the default Firefox Proton theme.
-- name: browser.proton.enabled
-  type: bool
-  value: false
-  mirror: always
-
 # Open PDFs in Edge with the --app flag if it is the default.
 - name: browser.pdf.launchDefaultEdgeAsApp
   type: bool
@@ -1626,6 +1620,12 @@
   value: false
   mirror: always
   rust: true
+
+# Enable Proton restyle. Requires restart.
+- name: browser.proton.enabled
+  type: bool
+  value: true
+  mirror: always
 
 # Blocked plugin content
 - name: browser.safebrowsing.blockedURIs.enabled
@@ -5972,6 +5972,11 @@
   value: true # Match naive behavior, but hopefully we can stop soon!
   mirror: always
 
+- name: gfx.compositor.clearstate
+  type: RelaxedAtomicBool
+  value: false
+  mirror: always
+
 # Whether GL contexts can be migrated to a different GPU (to match the one the
 # OS is using for composition).
 #
@@ -8891,13 +8896,6 @@
 - name: layout.css.overflow-moz-hidden-unscrollable.enabled
   type: RelaxedAtomicBool
   value: @IS_NOT_NIGHTLY_BUILD@
-  mirror: always
-  rust: true
-
-# Is support for CSS overflow: overlay enabled
-- name: layout.css.overflow-overlay.enabled
-  type: RelaxedAtomicBool
-  value: true
   mirror: always
   rust: true
 
@@ -14659,6 +14657,11 @@
   value: 100
   mirror: always
 
+- name: security.csp.enable
+  type: bool
+  value: true
+  mirror: always
+
 # Time span in seconds for reporting limit.
 - name: security.csp.reporting.limit.timespan
   type: uint32_t
@@ -16425,7 +16428,7 @@
 #---------------------------------------------------------------------------
 # Prefs starting with "widget."
 #---------------------------------------------------------------------------
-  
+
 - name: widget.native-controls.force-dwm-report-off
   type: bool
   value: false
@@ -16456,24 +16459,26 @@
   value: 0
   mirror: always
 
-# Global user preference for disabling native theme in content processes.
-#
-# NOTE(emilio): When changing this make sure to update the non_native_theme
-# entry in python/mozbuild/mozbuild/mozinfo.py and test_fission_autostart.py
-- name: widget.non-native-theme.enabled
-  type: RelaxedAtomicBool
-  value: false
-  mirror: always
-
 # Whether enable windows-modern mode for stylesheets
 - name: widget.windows-style.modern
   type: bool
   value: false
   mirror: always
 
-# Whether enable the Windows fog for stylesheets
-- name: widget.windows-style.fog
+# Whether enable windows fog for style
+- name: widget.windows-style.show-fog
   type: bool
+  value: false
+  mirror: always
+
+# Global user preference for disabling native theme in content processes.
+#
+# NOTE(emilio): When changing this make sure to update the non_native_theme
+# entry in python/mozbuild/mozbuild/mozinfo.py and test_fission_autostart.py
+# ^^^ no ~ev
+# I have no words. ~erizur
+- name: widget.non-native-theme.enabled
+  type: RelaxedAtomicBool
   value: false
   mirror: always
 

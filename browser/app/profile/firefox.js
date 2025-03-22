@@ -48,7 +48,7 @@ pref("extensions.recommendations.privacyPolicyUrl", "https://www.mozilla.org/pri
 // The URL for Firefox Color, recommended on the theme page in about:addons.
 pref("extensions.recommendations.themeRecommendationUrl", "https://color.firefox.com/?utm_source=firefox-browser&utm_medium=firefox-browser&utm_content=theme-footer-link");
 
-pref("extensions.update.autoUpdateDefault", true);
+pref("extensions.update.autoUpdateDefault", false);
 
 // Check AUS for system add-on updates.
 pref("extensions.systemAddon.update.url", "https://aus5.mozilla.org/update/3/SystemAddons/%VERSION%/%BUILD_ID%/%BUILD_TARGET%/%LOCALE%/%CHANNEL%/%OS_VERSION%/%DISTRIBUTION%/%DISTRIBUTION_VERSION%/update.xml");
@@ -138,7 +138,7 @@ pref("app.update.notifyDuringDownload", false);
 // should no longer be used directly. Instead, getAppUpdateAutoEnabled and
 // getAppUpdateAutoEnabled from UpdateUtils.sys.mjs should be used.
 #ifndef XP_WIN
-  pref("app.update.auto", true);
+  pref("app.update.auto", false);
 #endif
 
 // If set to true, the Update Service will apply updates in the background
@@ -156,7 +156,7 @@ pref("app.update.staging.enabled", true);
 
 // Whether or not to attempt using the service for updates.
 #ifdef MOZ_MAINTENANCE_SERVICE
-  pref("app.update.service.enabled", true);
+  pref("app.update.service.enabled", false);
 #endif
 
 #ifdef MOZ_BITS_DOWNLOAD
@@ -226,7 +226,7 @@ pref("lightweightThemes.getMoreURL", "https://addons.mozilla.org/%LOCALE%/firefo
 #endif
 
 // UI tour experience.
-pref("browser.uitour.enabled", true);
+pref("browser.uitour.enabled", false);
 pref("browser.uitour.loglevel", "Error");
 pref("browser.uitour.requireSecure", true);
 pref("browser.uitour.url", "https://www.mozilla.org/%LOCALE%/firefox/%VERSION%/tour/");
@@ -266,7 +266,7 @@ pref("browser.uidensity", 0);
 // while the user is in a touch environment (such as Windows tablet mode).
 pref("browser.touchmode.auto", true);
 // Whether Firefox will show the Compact Mode UIDensity option.
-pref("browser.compactmode.show", true);
+pref("browser.compactmode.show", false);
 
 // At startup, check if we're the default browser and prompt user if not.
 pref("browser.shell.checkDefaultBrowser", true);
@@ -318,7 +318,7 @@ pref("browser.startup.couldRestoreSession.count", 0);
 // Show an about:blank window as early as possible for quick startup feedback.
 // Held to nightly on Linux due to bug 1450626.
 // Disabled on Mac because the bouncing dock icon already provides feedback.
-#if defined(XP_WIN) || defined(MOZ_WIDGET_GTK) && defined(NIGHTLY_BUILD)
+#if defined(MOZ_WIDGET_GTK) && defined(NIGHTLY_BUILD)
   pref("browser.startup.blankWindow", true);
 #else
   pref("browser.startup.blankWindow", false);
@@ -327,7 +327,7 @@ pref("browser.startup.couldRestoreSession.count", 0);
 // Show a skeleton UI window prior to loading libxul. Only visible for windows
 // users as it is not implemented anywhere else.
 #if defined(XP_WIN)
-pref("browser.startup.preXulSkeletonUI", true);
+pref("browser.startup.preXulSkeletonUI", false);
 
 // Whether the checkbox to enable Windows launch on login is shown
 pref("browser.startup.windowsLaunchOnLogin.enabled", true);
@@ -396,7 +396,7 @@ pref("browser.urlbar.autoFill.adaptiveHistory.enabled", false);
 pref("browser.urlbar.autoFill.adaptiveHistory.minCharsThreshold", 0);
 
 // Whether to warm up network connections for autofill or search results.
-pref("browser.urlbar.speculativeConnect.enabled", true);
+pref("browser.urlbar.speculativeConnect.enabled", false);
 
 // Whether bookmarklets should be filtered out of Address Bar matches.
 // This is enabled for security reasons, when true it is still possible to
@@ -458,7 +458,7 @@ pref("browser.urlbar.suggest.weather", true);
 
 // If `browser.urlbar.trending.featureGate` is true, this controls whether
 // trending suggestions are turned on.
-pref("browser.urlbar.suggest.trending", true);
+pref("browser.urlbar.suggest.trending", false);
 
 // Whether non-sponsored quick suggest results are shown in the urlbar. This
 // pref is exposed to the user in the UI, and it's sticky so that its
@@ -1216,11 +1216,11 @@ pref("browser.preferences.experimental", true);
 #else
 pref("browser.preferences.experimental", false);
 #endif
-pref("browser.preferences.moreFromMozilla", true);
+pref("browser.preferences.moreFromMozilla", false);
 pref("browser.preferences.experimental.hidden", false);
 pref("browser.preferences.defaultPerformanceSettings.enabled", true);
 
-pref("browser.proton.enabled", false);
+pref("browser.proton.enabled", true);
 pref("browser.proton.toolbar.version", 0);
 
 // Backspace and Shift+Backspace behavior
@@ -1390,7 +1390,7 @@ pref("browser.zoom.full", true);
 pref("browser.zoom.updateBackgroundTabs", true);
 
 // The breakpad report server to link to in about:crashes
-pref("breakpad.reportURL", "https://crash-stats.mozilla.org/report/index/");
+pref("breakpad.reportURL", "");
 
 // URL for "Learn More" for DataCollection
 pref("toolkit.datacollection.infoURL",
@@ -1537,13 +1537,14 @@ pref("services.sync.prefs.sync.app.shield.optoutstudies.enabled", true);
 // uncompromised Sync-connected devices.
 pref("services.sync.prefs.sync.browser.contentblocking.category", true);
 pref("services.sync.prefs.sync.browser.contentblocking.features.strict", true);
-pref("services.sync.prefs.sync.browser.crashReports.unsubmittedCheck.autoSubmit2", true);
+pref("services.sync.prefs.sync.browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 pref("services.sync.prefs.sync.browser.ctrlTab.sortByRecentlyUsed", true);
-pref("services.sync.prefs.sync.browser.discovery.enabled", true);
+pref("services.sync.prefs.sync.browser.discovery.enabled", false);
 pref("services.sync.prefs.sync.browser.download.useDownloadDir", true);
 pref("services.sync.prefs.sync.browser.firefox-view.feature-tour", true);
 pref("services.sync.prefs.sync.browser.formfill.enable", true);
 pref("services.sync.prefs.sync.browser.link.open_newwindow", true);
+pref("services.sync.prefs.sync.browser.menu.showViewImageInfo", true);
 pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", true);
 pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", true);
 pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.showSearch", true);
@@ -1858,7 +1859,7 @@ pref("browser.aboutwelcome.showModal", false);
 // Experiment Manager
 // See Console.sys.mjs LOG_LEVELS for all possible values
 pref("messaging-system.log", "warn");
-pref("messaging-system.rsexperimentloader.enabled", true);
+pref("messaging-system.rsexperimentloader.enabled", false);
 pref("messaging-system.rsexperimentloader.collection_id", "nimbus-desktop-experiments");
 pref("nimbus.debug", false);
 pref("nimbus.validation.enabled", true);
@@ -1876,11 +1877,6 @@ pref("toolkit.startup.max_resumed_crashes", 3);
 // the session on next Windows startup
 #if defined(XP_WIN)
   pref("toolkit.winRegisterApplicationRestart", true);
-#endif
-
-// Disable DirectComposition by default.
-#if defined(XP_WIN)
-  pref("gfx.webrender.dcomp-win.enabled", false);
 #endif
 
 // The values of preferredAction and alwaysAskBeforeHandling before pdf.js
@@ -2043,21 +2039,21 @@ pref("browser.translations.select.enable", true);
 
 // Telemetry settings.
 // Determines if Telemetry pings can be archived locally.
-pref("toolkit.telemetry.archive.enabled", true);
+pref("toolkit.telemetry.archive.enabled", false);
 // Enables sending the shutdown ping when Firefox shuts down.
-pref("toolkit.telemetry.shutdownPingSender.enabled", true);
+pref("toolkit.telemetry.shutdownPingSender.enabled", false);
 // Enables using the `pingsender` background task.
 pref("toolkit.telemetry.shutdownPingSender.backgroundtask.enabled", false);
 // Enables sending the shutdown ping using the pingsender from the first session.
 pref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false);
 // Enables sending a duplicate of the first shutdown ping from the first session.
-pref("toolkit.telemetry.firstShutdownPing.enabled", true);
+pref("toolkit.telemetry.firstShutdownPing.enabled", false);
 // Enables sending the 'new-profile' ping on new profiles.
-pref("toolkit.telemetry.newProfilePing.enabled", true);
+pref("toolkit.telemetry.newProfilePing.enabled", false);
 // Enables sending 'update' pings on Firefox updates.
-pref("toolkit.telemetry.updatePing.enabled", true);
+pref("toolkit.telemetry.updatePing.enabled", false);
 // Enables sending 'bhr' pings when the browser hangs.
-pref("toolkit.telemetry.bhrPing.enabled", true);
+pref("toolkit.telemetry.bhrPing.enabled", false);
 
 // Enable GMP support in the addon manager.
 pref("media.gmp-provider.enabled", true);
@@ -2190,7 +2186,7 @@ pref("browser.contentblocking.report.vpn_regions", "ca,my,nz,sg,gb,gg,im,io,je,u
 pref("browser.promo.focus.disallowed_regions", "cn");
 
 // Default to enabling focus promos to be shown where allowed.
-pref("browser.promo.focus.enabled", true);
+pref("browser.promo.focus.enabled", false);
 
 // Default to enabling pin promos to be shown where allowed.
 pref("browser.promo.pin.enabled", true);
@@ -2301,7 +2297,7 @@ pref("browser.tabs.remote.warmup.maxTabs", 3);
 pref("browser.tabs.remote.warmup.unloadDelayMs", 2000);
 
 // For the about:tabcrashed page
-pref("browser.tabs.crashReporting.sendReport", true);
+pref("browser.tabs.crashReporting.sendReport", false);
 pref("browser.tabs.crashReporting.includeURL", false);
 
 // If true, unprivileged extensions may use experimental APIs on
@@ -2330,6 +2326,32 @@ pref("toolkit.pageThumbs.minHeight", 190);
 pref("browser.esedbreader.loglevel", "Error");
 
 pref("browser.laterrun.enabled", false);
+
+// Remove All the Activity Stuff
+pref("browser.newtabpage.activity-stream.asrouter.useRemoteL10n", false);             // o Online translate entries
+pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);      // o Recommend extensions as you browse
+pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);    // o Recommend features as you browse
+pref("browser.newtabpage.activity-stream.default.sites", "");                         // o Built-in Top Sites list - add your own instead
+pref("browser.newtabpage.activity-stream.discoverystream.config", "{}");              // o Personalized content cfg
+pref("browser.newtabpage.activity-stream.discoverystream.enabled", false);            // o Personalized content entries
+pref("browser.newtabpage.activity-stream.feeds.asrouterfeed", false);                 // o Online contextual recommendations
+pref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);          // o Personalized content entries
+pref("browser.newtabpage.activity-stream.feeds.newtabinit", true);                    // x New Tab page entries master toggle
+pref("browser.newtabpage.activity-stream.feeds.places", true);                        // x Breaks left-click to open links from New Tab page
+pref("browser.newtabpage.activity-stream.feeds.prefs", true);                         // x Oops something went wrong otherwise
+pref("browser.newtabpage.activity-stream.feeds.recommendationproviderswitcher",false);// o Refresh recommendations when provider changes
+pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);           // o Top Stories section entries
+pref("browser.newtabpage.activity-stream.feeds.section.topstories.options", "{}");    // o Top Stories section entries - forced empty
+pref("browser.newtabpage.activity-stream.feeds.sections", true);                      // x All sections entries master toggle
+pref("browser.newtabpage.activity-stream.feeds.snippets", false);                     // o Snippets entries
+pref("browser.newtabpage.activity-stream.feeds.system.topstories", false);            // o Top Stories no refresh
+pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", true);   // x Search pane switches focus to urlbar
+pref("browser.newtabpage.activity-stream.improvesearch.noDefaultSearchTile", true);   // x Search pane do not override most used sites order
+pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts",false);// o Search pane do not override most used sites
+pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);   // o Pocket stories in highlights
+pref("browser.newtabpage.activity-stream.showSearch", false);                         // o Search pane -superfluous,  use urlbar instead
+pref("browser.newtabpage.activity-stream.showSponsored", false);                      // o Sponsored content
+pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);              // o Sponsored Top Sites
 
 #ifdef FUZZING_SNAPSHOT
 pref("dom.ipc.processPrelaunch.enabled", false);
@@ -2426,7 +2448,7 @@ pref("signon.suggestImportCount", 3);
 // crash reports, and then show a notification for submitting
 // those reports.
 #ifdef NIGHTLY_BUILD
-  pref("browser.crashReports.unsubmittedCheck.enabled", true);
+  pref("browser.crashReports.unsubmittedCheck.enabled", false);
 #else
   pref("browser.crashReports.unsubmittedCheck.enabled", false);
 #endif
@@ -2463,17 +2485,17 @@ pref("screenshots.browser.component.preventContentEvents", true);
 pref("doh-rollout.clearModeOnShutdown", false);
 
 // Normandy client preferences
-pref("app.normandy.api_url", "https://normandy.cdn.mozilla.net/api/v1");
+pref("app.normandy.api_url", "");
 pref("app.normandy.dev_mode", false);
-pref("app.normandy.enabled", true);
-pref("app.normandy.first_run", true);
+pref("app.normandy.enabled", false);
+pref("app.normandy.first_run", false);
 pref("app.normandy.logging.level", 50); // Warn
 pref("app.normandy.run_interval_seconds", 21600); // 6 hours
 pref("app.normandy.shieldLearnMoreUrl", "https://support.mozilla.org/1/firefox/%VERSION%/%OS%/%LOCALE%/shield");
 pref("app.normandy.last_seen_buildid", "");
 pref("app.normandy.onsync_skew_sec", 600);
 #ifdef MOZ_DATA_REPORTING
-  pref("app.shield.optoutstudies.enabled", true);
+  pref("app.shield.optoutstudies.enabled", false);
 #else
   pref("app.shield.optoutstudies.enabled", false);
 #endif
@@ -2509,7 +2531,7 @@ pref("toolkit.coverage.enabled", false);
 pref("toolkit.coverage.endpoint.base", "https://coverage.mozilla.org");
 
 // Discovery prefs
-pref("browser.discovery.enabled", true);
+pref("browser.discovery.enabled", false);
 pref("browser.discovery.containers.enabled", true);
 pref("browser.discovery.sites", "addons.mozilla.org");
 
@@ -2938,6 +2960,13 @@ pref("first-startup.timeout", 30000);
   pref("app.normandy.test-prefs.bool", false);
   pref("app.normandy.test-prefs.integer", 0);
   pref("app.normandy.test-prefs.string", "");
+#endif
+
+// Shows 'View Image Info' item in the image context menu
+#ifdef MOZ_DEV_EDITION
+  pref("browser.menu.showViewImageInfo", true);
+#else
+  pref("browser.menu.showViewImageInfo", false);
 #endif
 
 // Handing URLs to external apps via the "Share URL" menu item could allow a proxy bypass
