@@ -2,18 +2,19 @@
     <img src="browser/branding/official/content/about-logo.png" alt="Nara logo">
 </p>
 
-# Marble
-Marble is a browser based on Mozilla Firefox (more specifically, the ESR variant) that aims to restore the Photon style & layout, while adding removed native styling features for various platforms.
+# Okaeri
+
+Okaeri is a browser fork of Marble based on Mozilla Firefox (more specifically, the ESR variant) that reverts some features of Marble that I personally don't like.
+
+
 
 ## Credits
 
-[Aubymori](https://github.com/aubymori) for the original Photon fixes for modern Firefox.
-[Isabella Lulamoon](https://github.com/kawapure) for the original Native Controls Patch.
-My house for food and electricity.
+[Credits go to the original Marble developers](https://github.com/NetworkNeighborhood/Marble?tab=readme-ov-file#credits) and [Mozilla for Firefox](https://www.mozilla.org/en-US/)
 
 ## Contributing
 
-Because Marble is forked from Firefox, its documentation mostly applies for us as well.
+Because Okaeri is forked from Firefox, its documentation mostly applies for us as well.
 
 Please read [this document](https://firefox-source-docs.mozilla.org/contributing/directory_structure.html) to understand the Mozilla directory structure.
 
