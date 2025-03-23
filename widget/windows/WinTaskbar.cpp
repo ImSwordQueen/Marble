@@ -207,7 +207,8 @@ WinTaskbar::~WinTaskbar() {
 }
 
 // static
-bool WinTaskbar::GenerateAppUserModelID(nsAString& aAppUserModelId) {
+bool WinTaskbar::GenerateAppUserModelID(nsAString& aAppUserModelId,
+                                        bool aPrivateBrowsing) {
   // If marked as such in prefs, use a hash of the profile path for the id
   // instead of the install path hash setup by the installer.
   if (Preferences::GetBool("taskbar.grouping.useprofile", false)) {
@@ -222,6 +223,11 @@ bool WinTaskbar::GenerateAppUserModelID(nsAString& aAppUserModelId) {
         id.AppendInt(HashString(path));
         if (!id.IsEmpty()) {
           aAppUserModelId.Assign(id);
+
+          if (aPrivateBrowsing) {
+            aAppUserModelId.AppendLiteral(";PrivateBrowsingAUMID");
+          }
+
           return true;
         }
       }
@@ -265,11 +271,16 @@ bool WinTaskbar::GenerateAppUserModelID(nsAString& aAppUserModelId) {
     gDirServiceProvider->GetInstallHash(aAppUserModelId);
   }
 
+  if (aPrivateBrowsing) {
+    aAppUserModelId.AppendLiteral(";PrivateBrowsingAUMID");
+  }
+
   return !aAppUserModelId.IsEmpty();
 }
 
 // static
-bool WinTaskbar::GetAppUserModelID(nsAString& aAppUserModelId) {
+bool WinTaskbar::GetAppUserModelID(nsAString& aAppUserModelId,
+                                   bool aPrivateBrowsing) {
   // If an ID has already been set then use that.
   PWSTR id;
   if (SUCCEEDED(GetCurrentProcessExplicitAppUserModelID(&id))) {
@@ -277,14 +288,21 @@ bool WinTaskbar::GetAppUserModelID(nsAString& aAppUserModelId) {
     CoTaskMemFree(id);
   }
 
-  return GenerateAppUserModelID(aAppUserModelId);
+  return GenerateAppUserModelID(aAppUserModelId, aPrivateBrowsing);
 }
 
 NS_IMETHODIMP
 WinTaskbar::GetDefaultGroupId(nsAString& aDefaultGroupId) {
-  if (!GetAppUserModelID(aDefaultGroupId)) {
+  if (!GetAppUserModelID(aDefaultGroupId)) return NS_ERROR_UNEXPECTED;
+
+  return NS_OK;
+}
+
+NS_IMETHODIMP
+WinTaskbar::GetDefaultPrivateGroupId(nsAString& aDefaultPrivateGroupId) {
+  if (!GetAppUserModelID(aDefaultPrivateGroupId, true))
     return NS_ERROR_UNEXPECTED;
-  }
+
   return NS_OK;
 }
 
@@ -412,9 +430,10 @@ WinTaskbar::CreateLegacyJumpListBuilder(nsILegacyJumpListBuilder** aJumpListBuil
 }
 
 NS_IMETHODIMP
-WinTaskbar::CreateJumpListBuilder(nsIJumpListBuilder** aJumpListBuilder) {
+WinTaskbar::CreateJumpListBuilder(bool aPrivateBrowsing,
+                                  nsIJumpListBuilder** aJumpListBuilder) {
   nsAutoString aumid;
-  GenerateAppUserModelID(aumid);
+  GenerateAppUserModelID(aumid, aPrivateBrowsing);
 
   nsCOMPtr<nsIJumpListBuilder> builder = new JumpListBuilder(aumid);
   if (!builder) {
