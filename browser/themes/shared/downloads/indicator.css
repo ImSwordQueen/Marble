@@ -8,7 +8,7 @@
   min-width: 16px;
   min-height: 16px;
   -moz-context-properties: fill, fill-opacity;
-  list-style-image: url("chrome://browser/skin/downloads/downloads.svg#arrow-with-bar");
+  list-style-image: url("chrome://browser/skin/downloads/downloads.svg");
 }
 
 #downloads-button[progress] > .toolbarbutton-badge-stack > #downloads-indicator-anchor > #downloads-indicator-icon,
