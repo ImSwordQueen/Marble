@@ -3,10 +3,10 @@
 <assemblyIdentity
         version="1.0.0.0"
         processorArchitecture="*"
-        name="Marble"
+        name="Okaeri"
         type="win32"
 />
-<description>Marble</description>
+<description>Okaeri</description>
 <dependency>
         <dependentAssembly>
                 <assemblyIdentity
