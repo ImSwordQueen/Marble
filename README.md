@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="browser/branding/official/content/about-logo.png" alt="Nara logo">
+    <img src="browser/branding/official/content/about-logo.png" alt="Marble logo">
 </p>
 
 # Marble
@@ -7,7 +7,7 @@ Marble is a browser based on Mozilla Firefox (more specifically, the ESR variant
 
 ## Credits
 
-[Aubymori](https://github.com/aubymori) for the original Photon fixes for modern Firefox.
+[Aubymori](https://github.com/aubymori) and [zapSNH](https://github.com/zapSNH/) for the original Photon fixes for modern Firefox.
 [Isabella Lulamoon](https://github.com/kawapure) for the original Native Controls Patch.
 My house for food and electricity.
 
