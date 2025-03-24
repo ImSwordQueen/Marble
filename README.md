@@ -1,16 +1,21 @@
 <p align="center">
-    <img src="browser/branding/official/content/about-logo.png" alt="Nara logo">
+    <img src="browser/branding/official/content/about-logo.png" alt="Nightly Logo">
 </p>
 
 # Okaeri
 
 Okaeri is a browser fork of Marble based on Mozilla Firefox (more specifically, the ESR variant) that reverts some features of Marble that I personally don't like.
 
-
-
 ## Credits
 
 [Credits go to the original Marble developers](https://github.com/NetworkNeighborhood/Marble?tab=readme-ov-file#credits) and [Mozilla for Firefox](https://www.mozilla.org/en-US/)
+
+### Some code snippets were taken from:
+
+- [Librewolf for bootstrap without VCS](https://codeberg.org/librewolf/source/)
+- [Firefox-for-windows-7 for TryGetDpiForMonitor](https://github.com/e3kskoy7wqk/Firefox-for-windows-7)
+
+
 
 ## Contributing
 
@@ -27,4 +32,11 @@ Here are some useful sources for Mozilla documentation (in order):
 ## Building from source
 
 [Same as regular Firefox.](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html)
+
+
+## Tested on
+
+- Windows 11 Version 24H2 x64
+- Windows 10 Version 21H2 LTSC x64
+- Windows 8.0 x64 (Not well tested, There might be bugs)
 
