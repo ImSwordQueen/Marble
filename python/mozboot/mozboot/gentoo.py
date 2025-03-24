@@ -20,8 +20,7 @@ class GentooBootstrapper(LinuxBootstrapper, BaseBootstrapper):
         }
         # watchman is available but requires messing with USEs.
         packages = [DISAMBIGUATE.get(p, p) for p in packages if p != "watchman"]
-        if packages:
-            self.run_as_root(["emerge", "--noreplace"] + packages)
+        self.run_as_root(["emerge", "--noreplace"] + packages)
 
     def _update_package_manager(self):
         self.run_as_root(["emerge", "--sync"])
