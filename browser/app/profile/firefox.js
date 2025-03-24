@@ -2396,6 +2396,10 @@ pref("toolkit.telemetry.reportingpolicy.firstRun", false);
 pref("toolkit.telemetry.server", "");
 pref("toolkit.telemetry.unified", false);
 pref("toolkit.telemetry.unifiedIsOptIn", false);
+pref("browser.ping-centre.telemetry", false);
+pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+pref("browser.newtabpage.activity-stream.telemetry", false);
+pref("datareporting.sessions.current.clean", false);
 
 #ifdef FUZZING_SNAPSHOT
 pref("dom.ipc.processPrelaunch.enabled", false);
