@@ -300,16 +300,16 @@ static nsresult GetSystemParentDirectory(nsIFile** aFile) {
   rv = GetOSXFolderType(kOnSystemDisk, kApplicationSupportFolderType,
                         getter_AddRefs(localDir));
   if (NS_SUCCEEDED(rv)) {
-    rv = localDir->AppendNative("Mozilla"_ns);
+    rv = localDir->AppendNative("Midotzer"_ns);
   }
 #  else
   constexpr auto dirname =
 #    ifdef HAVE_USR_LIB64_DIR
-      "/usr/lib64/mozilla"_ns
+      "/usr/lib64/midotzer"_ns
 #    elif defined(__OpenBSD__) || defined(__FreeBSD__)
-      "/usr/local/lib/mozilla"_ns
+      "/usr/local/lib/midotzer"_ns
 #    else
-      "/usr/lib/mozilla"_ns
+      "/usr/lib/midotzer"_ns
 #    endif
       ;
   rv = NS_NewNativeLocalFile(dirname, false, getter_AddRefs(localDir));
@@ -381,9 +381,9 @@ nsXREDirProvider::GetFile(const char* aProperty, bool* aPersistent,
     rv = GetUserDataDirectoryHome(getter_AddRefs(file), false);
     NS_ENSURE_SUCCESS(rv, rv);
 #  if defined(XP_MACOSX)
-    rv = file->AppendNative("Mozilla"_ns);
+    rv = file->AppendNative("Midotzer"_ns);
 #  else   // defined(XP_MACOSX)
-    rv = file->AppendNative(".mozilla"_ns);
+    rv = file->AppendNative(".midotzer"_ns);
 #  endif  // defined(XP_MACOSX)
   }
 #endif  // defined(XP_UNIX) || defined(XP_MACOSX)
@@ -413,9 +413,9 @@ nsXREDirProvider::GetFile(const char* aProperty, bool* aPersistent,
   else if (!strcmp(aProperty, XRE_SYS_SHARE_EXTENSION_PARENT_DIR)) {
 #  ifdef ENABLE_SYSTEM_EXTENSION_DIRS
 #    if defined(__OpenBSD__) || defined(__FreeBSD__)
-    static const char* const sysLExtDir = "/usr/local/share/mozilla/extensions";
+    static const char* const sysLExtDir = "/usr/local/share/midotzer/extensions";
 #    else
-    static const char* const sysLExtDir = "/usr/share/mozilla/extensions";
+    static const char* const sysLExtDir = "/usr/share/midotzer/extensions";
 #    endif
     rv = NS_NewNativeLocalFile(nsDependentCString(sysLExtDir), false,
                                getter_AddRefs(file));
@@ -1132,7 +1132,7 @@ nsresult nsXREDirProvider::GetUpdateRootDir(nsIFile** aResult,
             nsDependentCString(hasVendor ? GetAppVendor() : GetAppName())))) {
       return NS_ERROR_FAILURE;
     }
-  } else if (NS_FAILED(localDir->AppendNative("Mozilla"_ns))) {
+  } else if (NS_FAILED(localDir->AppendNative("Midotzer"_ns))) {
     return NS_ERROR_FAILURE;
   }
 
@@ -1398,7 +1398,7 @@ nsresult nsXREDirProvider::AppendSysUserExtensionPath(nsIFile* aFile) {
 
 #if defined(XP_MACOSX) || defined(XP_WIN)
 
-  static const char* const sXR = "Mozilla";
+  static const char* const sXR = "Midotzer";
   rv = aFile->AppendNative(nsDependentCString(sXR));
   NS_ENSURE_SUCCESS(rv, rv);
 
@@ -1408,7 +1408,7 @@ nsresult nsXREDirProvider::AppendSysUserExtensionPath(nsIFile* aFile) {
 
 #elif defined(XP_UNIX)
 
-  static const char* const sXR = ".mozilla";
+  static const char* const sXR = ".midotzer";
   rv = aFile->AppendNative(nsDependentCString(sXR));
   NS_ENSURE_SUCCESS(rv, rv);
 
