@@ -2400,6 +2400,7 @@ pref("browser.ping-centre.telemetry", false);
 pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 pref("browser.newtabpage.activity-stream.telemetry", false);
 pref("datareporting.sessions.current.clean", false);
+pref("privacy.resistFingerprinting", true);
 
 #ifdef FUZZING_SNAPSHOT
 pref("dom.ipc.processPrelaunch.enabled", false);
