@@ -39,4 +39,4 @@ Here are some useful sources for Mozilla documentation (in order):
 - Windows 11 Version 24H2 x64
 - Windows 10 Version 21H2 LTSC x64
 - Windows 8.0 x64 (Not well tested, There might be bugs)
-
+- [[BROKEN](https://github.com/Midotzer/Okaeri/wiki/Okaeri-is-broken-on-Revert8Plus!)] Windows 10 Version 21H2 LTSC x64 [(With Revert8Plus)](https://github.com/Midotzer/Okaeri/wiki/Okaeri-is-broken-on-Revert8Plus!)
