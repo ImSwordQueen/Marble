@@ -654,14 +654,6 @@ class AppMenuHelper extends MenuHelper {
 class AppMenuHelpSubmenuHelper extends MenuHelper {
   menuDescription = "AppMenu help sub-menu";
 
-  get reportBrokenSite() {
-    return this.getViewNode("appMenu_help_reportBrokenSite");
-  }
-
-  get reportSiteIssue() {
-    return this.getViewNode("appMenu_help_reportSiteIssue");
-  }
-
   get popup() {
     return this.win.document.getElementById("appMenu-popup");
   }
@@ -688,14 +680,6 @@ class HelpMenuHelper extends MenuHelper {
 
   get showsBackButton() {
     return false;
-  }
-
-  get reportBrokenSite() {
-    return this.win.document.getElementById("help_reportBrokenSite");
-  }
-
-  get reportSiteIssue() {
-    return this.win.document.getElementById("help_reportSiteIssue");
   }
 
   get popup() {

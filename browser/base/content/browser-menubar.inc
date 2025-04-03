@@ -476,11 +476,6 @@
                           oncommand="openTroubleshootingPage()"
                           data-l10n-id="menu-help-more-troubleshooting-info"
                           appmenu-data-l10n-id="appmenu-help-more-troubleshooting-info"/>
-                <menuitem id="help_reportSiteIssue"
-                          oncommand="ReportSiteIssue();"
-                          data-l10n-id="menu-help-report-site-issue"
-                          appmenu-data-l10n-id="appmenu-help-report-site-issue"
-                          hidden="true"/>
                 <menuitem id="menu_HelpPopup_reportPhishingtoolmenu"
                           disabled="true"
                           oncommand="openUILink(gSafeBrowsing.getReportURL('Phish'), event, {triggeringPrincipal: Services.scriptSecurityManager.createNullPrincipal({})});"
