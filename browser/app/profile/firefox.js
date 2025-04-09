@@ -1694,16 +1694,6 @@ pref("browser.partnerlink.campaign.topsites", "amzn_2020_a1");
 // Activates preloading of the new tab url.
 pref("browser.newtab.preload", false);
 
-// Browser category telemetry
-pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
-pref("browser.newtabpage.activity-stream.telemetry", false);
-pref("browser.ping-centre.telemetry", false);
-
-pref("datareporting.healthreport.service.enabled", false);
-pref("datareporting.healthreport.uploadEnabled", false);
-pref("datareporting.policy.dataSubmissionEnabled", false);
-pref("datareporting.sessions.current.clean", false);
-
 // Weather widget for newtab
 pref("browser.newtabpage.activity-stream.showWeather", true);
 pref("browser.newtabpage.activity-stream.weather.query", "");
@@ -2040,11 +2030,6 @@ pref("browser.translations.newSettingsUI.enable", false);
 // engine https://browser.mt/.
 pref("browser.translations.select.enable", true);
 
-// Telemetry settings.
-pref("toolkit.telemetry.enabled", false);
-pref("toolkit.telemetry.rejected", true);
-pref("toolkit.telemetry.unified", false);
-pref("toolkit.telemetry.unifiedIsOptIn", false);
 // Determines if Telemetry pings can be archived locally.
 pref("toolkit.telemetry.archive.enabled", false);
 // Enables sending the shutdown ping when Firefox shuts down.
