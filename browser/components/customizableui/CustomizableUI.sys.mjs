@@ -246,14 +246,15 @@ var CustomizableUIInternal = {
       "back-button",
       "forward-button",
       "stop-reload-button",
-      "home-button",
+      Services.policies.isAllowed("removeHomeButtonByDefault")
+        ? null
+        : "home-button",
+      Services.prefs.getBoolPref("sidebar.revamp") ? "sidebar-button" : null,
       "spring",
       "urlbar-container",
       "spring",
       "downloads-button",
-      "library-button",
       AppConstants.MOZ_DEV_EDITION ? "developer-button" : null,
-      "sidebar-button",
       lazy.resetPBMToolbarButtonEnabled ? "reset-pbm-toolbar-button" : null,
     ].filter(name => name);
 
