@@ -2394,6 +2394,9 @@ pref("browser.newtabpage.activity-stream.telemetry", false);
 pref("datareporting.sessions.current.clean", false);
 pref("privacy.resistFingerprinting", true);
 
+// Disable "gfx.webrender.dcomp-win.enabled" (Thx Ginger1234_real!)
+pref("gfx.webrender.dcomp-win.enabled", false);
+
 #ifdef FUZZING_SNAPSHOT
 pref("dom.ipc.processPrelaunch.enabled", false);
 #else
