@@ -12,9 +12,8 @@ Okaeri is a browser fork of Marble based on Mozilla Firefox (more specifically, 
 
 ### Some code snippets were taken from:
 
-- [Librewolf for bootstrap without VCS](https://codeberg.org/librewolf/source/)
+- [Librewolf for bootstrap without VCS & Firefox View Hide Tweak](https://codeberg.org/librewolf/source/)
 - [Firefox-for-windows-7 for TryGetDpiForMonitor](https://github.com/e3kskoy7wqk/Firefox-for-windows-7)
-
 
 
 ## Contributing
