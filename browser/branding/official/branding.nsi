@@ -10,9 +10,9 @@
 # instead of BrandFullName and typically should not be modified.
 !define BrandFullNameInternal "Okaeri"
 !define BrandFullName         "Okaeri"
-!define CompanyName           "Midotzer"
-!define URLInfoAbout          "https://github.com/Midotzer/Okaeri/"
-!define HelpLink              "https://github.com/Midotzer/Okaeri/"
+!define CompanyName           "Raytek Cafe"
+!define URLInfoAbout          "https://github.com/raytek-cafe/Okaeri/"
+!define HelpLink              "https://github.com/raytek-cafe/Okaeri/"
 
 !define URLStubDownloadX86 "https://download.mozilla.org/?os=win&lang=${AB_CD}&product=firefox-latest"
 !define URLStubDownloadAMD64 "https://download.mozilla.org/?os=win64&lang=${AB_CD}&product=firefox-latest"
