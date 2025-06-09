@@ -30,8 +30,27 @@ Here are some useful sources for Mozilla documentation (in order):
 
 ## Building from source
 
-[Same as regular Firefox.](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html)
+[Same as regular Firefox.](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html) with some changes:
 
+1. Clone the Repo from GitHub directly.
+2. After cloning, run ./mach bootstrap
+3. Follow the same steps as regular as firefox.
+
+## Integrating additional patches
+
+1. Clone [the settings branch](https://github.com/raytek-cafe/Okaeri.git) in a separate folder
+2. Open your console and do `Git Apply remove-organization-policy-banner.patch`
+3. Copy the `Distribution` folder into the compiled dist bin folder EG:`Okaeri\obj-x86_64-pc-windows-msvc\dist\bin`
+4. Modify `Okaeri\browser\installer\package-manifest.in` to include the following:
+   > [browser]
+   > 
+   > ; [Base Browser Files]
+   >
+   > ***@BINPATH@/distribution/policies.json***
+   >
+   > #ifndef XP_UNIX
+5. Recompile Okaeri again.
+6. Run ./mach package
 
 ## Tested on
 
