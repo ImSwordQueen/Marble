@@ -3,4 +3,4 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 MOZ_APP_DISPLAYNAME=Okaeri
-MOZ_APP_VENDOR="Midotzer"
+MOZ_APP_VENDOR="Okaeri"

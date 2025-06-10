@@ -61,7 +61,7 @@ aboutdialog-submit-feedback = Submit Feedback
 
 community-exp = <label data-l10n-name="community-exp-mozillaLink">{ -vendor-short-name }</label> is a <label data-l10n-name="community-exp-creditsLink">global community</label> working together to keep the Web open, public and accessible to all.
 
-community-2 = { -brand-short-name } is designed by <label data-l10n-name="community-mozillaLink">The Midotzer Organization</label>, a group of developers dedicated to making software look and feel how it did in older times.
+community-2 = { -brand-short-name } is designed by <label data-l10n-name="community-mozillaLink">raytek.cafe</label>, a group of friends working together to make tech friendly and acessible like it used to be.
 
 helpus = Want to help? <label data-l10n-name="helpus-getInvolvedLink">Get involved!</label>
 
