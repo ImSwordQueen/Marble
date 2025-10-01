@@ -1,4 +1,4 @@
-# This Repository has been archive in favour of https://github.com/raytek-cafe/Okaeri. New development will continue there.
+# This Repository has been archiveD in favour of https://github.com/raytek-cafe/Okaeri. New development will continue there.
 
 
 <p align="center">
@@ -61,4 +61,5 @@ Here are some useful sources for Mozilla documentation (in order):
 - Windows 10 Version 21H2 LTSC x64
 - Windows 8.0 x64 (Not well tested, There might be bugs)
 - [[BROKEN](https://github.com/raytek-cafe/Okaeri/wiki/Okaeri-is-broken-on-Revert8Plus!)] Windows 10 Version 21H2 LTSC x64 [(With Revert8Plus)](https://github.com/raytek-cafe/Okaeri/wiki/Okaeri-is-broken-on-Revert8Plus!)
+
 
